@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Prediction Result</title>
+    <title>Sentiment Analysis Result</title>
     <style>
         /* General Reset */
         * {
@@ -52,6 +52,7 @@
             border-radius: 5px;
             display: inline-block;
             margin-bottom: 20px;
+            word-wrap: break-word; /* Prevent text from overflowing */
         }
 
         /* Link Back */
@@ -59,10 +60,12 @@
             font-size: 1rem;
             color: #4CAF50;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 24px; /* Adjusted padding to give more space */
             border: 2px solid #4CAF50;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
+            display: inline-block; /* Makes the button behave like an inline block */
+            text-align: center; /* Centers the text inside the link */
         }
 
         a:hover {
@@ -87,6 +90,7 @@
 
             a {
                 font-size: 0.9rem;
+                padding: 10px 20px; /* Adjust the padding on smaller screens */
             }
         }
     </style>
@@ -94,7 +98,7 @@
 <body>
     <div class="container">
         <h1>Prediction Result</h1>
-        <p class="prediction">The predicted emotion is: <strong>{{ prediction }}</strong></p>
+        <p class="prediction">The predicted sentiment is: <strong>{{ prediction }}</strong></p>
         <a href="/">Go Back</a>
     </div>
 </body>

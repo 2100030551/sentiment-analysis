@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Prediction</title>
+    <title>Sentiment Analysis</title>
     <style>
         /* General Reset */
         * {
@@ -111,21 +111,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Emotion Prediction from Audio</h1>
-        <p>Upload an audio file to predict the emotion expressed in the voice.</p>
+        <h1>Sentiment Analysis from Audio</h1>
+        <p>Upload an audio file to analyze the sentiment of the speech (positive, negative, or neutral).</p>
 
         <!-- Upload Section -->
         <div class="upload-section">
+            <!-- Form action is set to "/predict" -->
             <form action="/predict" method="POST" enctype="multipart/form-data">
                 <input type="file" name="audio_file" accept=".wav, .mp3" required>
-                <button type="submit">Predict Emotion</button>
+                <button type="submit">Analyze Sentiment</button>
             </form>
         </div>
 
         <!-- Footer -->
-        <footer>
-            <p>Powered by Emotion Recognition API</p>
-        </footer>
+
     </div>
 </body>
 </html>

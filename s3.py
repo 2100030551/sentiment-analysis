@@ -34,10 +34,10 @@ def load_data(class_paths):
     return np.array(features), np.array(labels)
 
 class_paths = {
-    'Class-1': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-1',
-    'Class-2': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-2',
-    'Class-3': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-3',
-    'Class-4': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-4'
+    'Positive': '### Path to Happy (Positive) samples',
+    'Negative': '### Path to Sad (Negative) samples',
+    'Fear': '### Path to Fear (Negative) samples (merged)',
+    'Neutral': '### Path to Neutral samples'
 }
 
 # Load data
@@ -87,12 +87,11 @@ probabilities = model.predict(X_test)
 
 # Custom colors for each emotion class
 colors = {
-    'Class-1': 'mediumseagreen',  # happy
-    'Class-2': 'firebrick',       # anger
-    'Class-3': 'black',           # fear
-    'Class-4': 'deepskyblue'      # sad
+    'Positive': 'mediumseagreen',  # Positive sentiment (formerly Happy)
+    'Negative': 'firebrick',       # Negative sentiment (formerly Sad or Fear)
+    'Neutral': 'deepskyblue'       # Neutral sentiment (formerly Neutral)
 }
-# ...
+...
 
 # Plotting the predicted probabilities with custom colors
 emotions = list(class_paths.keys())
@@ -109,6 +108,6 @@ fig.legend(emotions, title='Emotions', bbox_to_anchor=(1.05, 0.5), loc='center l
 plt.xlabel('Emotions')
 
 # Add a centered title below the x-axis
-plt.suptitle("Emotion Mapping: Class-1 as Happy, Class-2 as Anger, Class-3 as Fear, Class-4 as Sad", x=0.5, y=0.92)
+plt.suptitle("Sentiment Mapping: Positive, Negative, and Neutral Sentiments", x=0.5, y=0.92)
 
 plt.show()

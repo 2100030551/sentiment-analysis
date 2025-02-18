@@ -30,6 +30,10 @@ def load_data(class_paths):
     features = []
 
     for class_label, folder_path in class_paths.items():
+        if not os.path.exists(folder_path):  # Check if the folder exists
+            print(f"Warning: The folder {folder_path} does not exist.")
+            continue  # Skip the current class if folder does not exist
+
         for filename in os.listdir(folder_path):
             file_path = os.path.join(folder_path, filename)
             if filename.endswith('.wav'):
@@ -41,11 +45,12 @@ def load_data(class_paths):
 
 # Set up the paths to the dataset
 class_paths = {
-    'Happy': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-1',  # Update with your path
-    'Anger': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-2',  # Update with your path
-    'Fear': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-3',  # Update with your path
-    'Sad': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-4'  # Update with your path
+    'Positive': '### Path to Happy (Positive) samples',
+    'Negative': '### Path to Sad (Negative) samples',
+    'Fear': '### Path to Fear (Negative) samples (merged)',
+    'Neutral': '### Path to Neutral samples'
 }
+
 
 # Load data
 features, labels = load_data(class_paths)

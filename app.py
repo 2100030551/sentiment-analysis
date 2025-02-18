@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Load the trained model (ensure path is correct)
 try:
-    model = load_model('models/model.h5')
+    model = load_model('model.h5')  # Ensure this path is correct
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")
@@ -47,16 +47,25 @@ def predict():
         return "Error extracting features", 500
 
     features = np.expand_dims(features, axis=0)
+    print(f"Feature shape: {features.shape}")
 
     try:
         # Make a prediction using the loaded model
         prediction = model.predict(features)
-        predicted_class = np.argmax(prediction, axis=1)
-        emotion = ['happy', 'anger', 'fear', 'sad'][predicted_class[0]]
+        print(f"Prediction output: {prediction}")
+
+        # Ensure prediction is valid and matches the number of classes
+        if prediction.shape[1] == 4:  # 4 classes (update this to 4)
+            predicted_class = np.argmax(prediction, axis=1)
+            # Updated to include 4 classes
+            emotion = ['happy', 'anger', 'fear', 'sad'][predicted_class[0]]  # 4 emotions
+        else:
+            raise ValueError(f"Unexpected prediction shape: {prediction.shape}")
+
         print(f"Prediction: {emotion}")
     except Exception as e:
         print(f"Error during prediction: {e}")
-        return "Error during prediction", 500
+        return f"Error during prediction: {e}", 500
 
     return render_template('result.html', prediction=emotion)
 

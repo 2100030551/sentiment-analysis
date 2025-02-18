@@ -6,18 +6,19 @@ import numpy as np
 
 # Specify the directory paths for each class
 class_paths = {
-    'Class-1': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-1',
-    'Class-2': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-2',
-    'Class-3': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-3',
-    'Class-4': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-4'
+    'Positive': '### Path to Happy (Positive) samples',
+    'Negative': '### Path to Sad (Negative) samples',
+    'Fear': '### Path to Fear (Negative) samples (merged)',
+    'Neutral': '### Path to Neutral samples'
 }
+
 
 # Dictionary to map class names to emotions
 class_emotions = {
     'Class-1': 'Happy',
-    'Class-2': 'Anger',
-    'Class-3': 'Fear',
-    'Class-4': 'Sad'
+    'Class-2': 'Fear',
+    'Class-3': 'Sad',
+    'Class-4': 'Neutral'
 }
 
 # Function to preprocess audio file and extract features

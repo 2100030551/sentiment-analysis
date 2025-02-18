@@ -35,11 +35,12 @@ def load_data(class_paths):
     return np.array(features), np.array(labels)
 
 class_paths = {
-    'Class-1': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-1',
-    'Class-2': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-2',
-    'Class-3': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-3',
-    'Class-4': '/Users/tej/PycharmProjects/NLP/Audiowav(1)/Class-4'
+    'Positive': '### Path to Happy (Positive) samples',
+    'Negative': '### Path to Sad (Negative) samples',
+    'Fear': '### Path to Fear (Negative) samples (merged)',
+    'Neutral': '### Path to Neutral samples'
 }
+
 
 # Load data
 features, labels = load_data(class_paths)

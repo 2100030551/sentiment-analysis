@@ -18,7 +18,7 @@ def extract_features(file_path, sample_rate=22050, n_fft=1024, hop_length=512, n
     return mfccs_normalized
 
 # Specify the directory path where your WAV files are located
-dataset_folder = '/Users/tej/PycharmProjects/NLP/AudioWAV'
+dataset_folder = '#'
 
 wav_files = []
 labels = []  # Assuming binary classification, you need labels
