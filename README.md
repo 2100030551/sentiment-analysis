@@ -30,15 +30,17 @@ This Sentiment Analysis system uses Natural Language Processing (NLP) to predict
 ### Screenshots 📸
 
 #### 1. **Audio File Upload**
-![Audio File Upload](screen shots/1.png)  
+![Sentiment Prediction](https://github.com/2100030551/sentiment-analysis/blob/main/screen%20shots/1.png)
+  
 *Description: This screenshot shows the file upload interface where users can upload their audio files for sentiment analysis.*
 
 #### 2. **Sentiment Prediction**
-![Sentiment Prediction](screen shots/3.png)  
+![Sentiment Prediction](https://github.com/2100030551/sentiment-analysis/blob/main/screen%20shots/3.png)
+
 *Description: After uploading the audio, the system displays the predicted sentiment (Positive, Negative, Neutral) based on the transcribed text.*
 
 #### 3. **Model Training (Accuracy & Loss)**
-![Model Training](screen shots/2.png)  
+![Model Training](https://github.com/2100030551/sentiment-analysis/blob/main/screen%20shots/2.png)
 *Description: This graph shows the model's training process, including accuracy and loss values over the epochs.*
 
 ---
